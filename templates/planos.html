@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Planos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <a href="/">Alunos</a> |
+        <a href="/gestao-planos">Planos</a>
+    </nav>
+
+    <h1>Gestão de Planos</h1>
+
+    <section id="formulario-cadastro">
+        <h2>Novo Plano</h2>
+
+        <label for="nome">Nome do Plano:</label>
+        <input type="text" id="nome" placeholder="Ex: Mensal, Trimestral">
+
+        <label for="duracao_meses">Duração (meses):</label>
+        <input type="number" id="duracao_meses" min="1">
+
+        <label for="valor">Valor (R$):</label>
+        <input type="number" id="valor" step="0.01" min="0">
+
+        <label for="descricao">Descrição (opcional):</label>
+        <input type="text" id="descricao" placeholder="Ex: Acesso completo à academia">
+
+        <button type="button" id="btn-cadastrar">Cadastrar</button>
+
+        <p id="mensagem-status"></p>
+    </section>
+
+    <section id="listagem-planos">
+        <h2>Planos Cadastrados</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Duração</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela-planos">
+            </tbody>
+        </table>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/plano.js') }}"></script>
+</body>
+</html>

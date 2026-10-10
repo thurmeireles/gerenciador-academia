@@ -4,3 +4,4 @@ __pycache__/
 config.py
 testar_conexao.py
 testar_insercao.py
+testar_plano.py
