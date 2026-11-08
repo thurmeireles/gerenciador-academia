@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Controle de Matrículas</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+
+        <nav>
+            <a href="/">Alunos</a> |
+            <a href="/gestao-planos">Planos</a> |
+            <a href="/gestao-matriculas">Matrículas</a>
+        </nav>
+
+        <h1>Controle de Matrículas</h1>
+
+        <section id="formulario-cadastro">
+            <h2>Nova Matrícula</h2>
+
+            <label for="aluno_id">Aluno:</label>
+            <select id="aluno_id">
+                <option value="">Selecione um aluno</option>
+            </select>
+
+            <label for="plano_id">Plano:</label>
+            <select id="plano_id">
+                <option value="">Selecione um plano</option>
+            </select>
+
+            <label for="data_inicio">Data de início:</label>
+            <input type="date" id="data_inicio">
+
+            <button type="button" id="btn-cadastrar">Matricular</button>
+
+            <p id="mensagem-status"></p>
+        </section>
+
+        <section id="listagem-matriculas">
+            <h2>Matrículas Registradas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Aluno</th>
+                        <th>Plano</th>
+                        <th>Início</th>
+                        <th>Término</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela-matriculas">
+                </tbody>
+            </table>
+        </section>
+
+        <script src="{{ url_for('static', filename='js/matricula.js') }}"></script>
+    </body>
+</html>
