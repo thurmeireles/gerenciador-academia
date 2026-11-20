@@ -11,6 +11,9 @@ app.register_blueprint(plano_bp)
 from routes.matricula_routes import matricula_bp
 app.register_blueprint(matricula_bp)
 
+from routes.pagamento_routes import pagamento_bp
+app.register_blueprint(pagamento_bp)
+
 @app.route('/')
 def index():
     return render_template('alunos.html')
@@ -22,6 +25,10 @@ def pagina_planos():
 @app.route('/gestao-matriculas')
 def pagina_matriculas():
     return render_template('matriculas.html')
+
+@app.route('/gestao-pagamentos')
+def pagina_pagamentos():
+    return render_template('pagamentos.html')
 
 if __name__ == '__main__':
     app.run(debug=False)

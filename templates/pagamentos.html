@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Controle de Pagamentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <a href="/">Alunos</a> |
+        <a href="/gestao-planos">Planos</a> |
+        <a href="/gestao-matriculas">Matrículas</a> |
+        <a href="/gestao-pagamentos">Pagamentos</a>
+    </nav>
+
+    <h1>Controle de Pagamentos</h1>
+
+    <section id="formulario-cadastro">
+        <h2>Novo Pagamento</h2>
+
+        <label for="matricula_id">Matrícula pendente:</label>
+        <select id="matricula_id">
+            <option value="">Selecione uma matrícula</option>
+        </select>
+
+        <label for="forma_pagamento">Forma de pagamento:</label>
+        <select id="forma_pagamento">
+            <option value="">Selecione a forma de pagamento</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="pix">Pix</option>
+            <option value="cartao_debito">Cartão de débito</option>
+            <option value="cartao_credito">Cartão de crédito</option>
+        </select>
+
+        <label for="data_pagamento">Data do pagamento:</label>
+        <input type="date" id="data_pagamento">
+
+        <button type="button" id="btn-cadastrar">Registrar pagamento</button>
+
+        <p id="mensagem-status"></p>
+    </section>
+
+    <section id="listagem-pagamentos">
+        <h2>Pagamentos Registrados</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Aluno</th>
+                    <th>Plano</th>
+                    <th>Valor</th>
+                    <th>Forma</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela-pagamentos">
+            </tbody>
+        </table>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/pagamento.js') }}"></script>
+</body>
+</html>
